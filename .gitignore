@@ -1,0 +1,16 @@
+target/
+*.class
+*.war
+.idea/
+*.iml
+.vscode/
+.DS_Store
+db.properties.local
+
+# Local database credentials
+src/main/resources/db.properties
+
+# Environment secrets
+.env
+.env.*
+!.env.example

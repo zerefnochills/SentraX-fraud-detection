@@ -1,0 +1,10 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<header class="topbar">
+    <div class="brand">SentraX</div>
+    <nav>
+        <a href="<%= request.getContextPath() %>/dashboard">Dashboard</a>
+        <a href="<%= request.getContextPath() %>/transaction/new">New Transaction</a>
+        <a href="<%= request.getContextPath() %>/alerts">Alerts</a>
+        <a href="<%= request.getContextPath() %>/logout">Logout</a>
+    </nav>
+</header>

@@ -1,0 +1,149 @@
+/* SentraX dashboard styling — plain CSS, no framework dependency. */
+
+:root {
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --brand: #1d4ed8;
+    --safe: #059669;
+    --suspicious: #d97706;
+    --fraud: #dc2626;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+body.centered {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbar {
+    background: var(--text);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 28px;
+}
+
+.topbar .brand { font-weight: 700; font-size: 1.2rem; letter-spacing: 0.5px; }
+
+.topbar nav a {
+    color: #e5e7eb;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.95rem;
+}
+
+.topbar nav a:hover { color: #fff; }
+
+.container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+.container.narrow { max-width: 560px; }
+
+.auth-card, .form-card, .result-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.auth-card { width: 360px; text-align: center; }
+.auth-card h1 { margin: 0 0 4px; color: var(--brand); }
+.auth-card .subtitle { color: var(--muted); margin-bottom: 20px; font-size: 0.9rem; }
+
+form label { display: block; text-align: left; font-size: 0.85rem; margin: 12px 0 4px; color: var(--muted); }
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-size: 0.95rem;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 8px;
+    background: var(--brand);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover { background: #1e40af; }
+
+.hint { margin-top: 16px; font-size: 0.8rem; color: var(--muted); }
+.error-text { color: var(--fraud); font-size: 0.9rem; }
+
+.stat-row { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.stat-card {
+    flex: 1;
+    min-width: 140px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+}
+.stat-card .stat-value { display: block; font-size: 1.8rem; font-weight: 700; }
+.stat-card.safe .stat-value { color: var(--safe); }
+.stat-card.suspicious .stat-value { color: var(--suspicious); }
+.stat-card.fraud .stat-value { color: var(--fraud); }
+.stat-card.alerts .stat-value { color: var(--brand); }
+
+.panel-row { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; }
+.panel {
+    flex: 1;
+    min-width: 320px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; }
+
+.badge { padding: 3px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; color: #fff; }
+.badge-safe { background: var(--safe); }
+.badge-suspicious { background: var(--suspicious); }
+.badge-fraud { background: var(--fraud); }
+
+tr.row-fraud { background: #fef2f2; }
+tr.row-suspicious { background: #fffbeb; }
+
+.alert-list { list-style: none; padding: 0; margin: 0 0 16px; }
+.alert-list li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+.alert-list li span { color: var(--muted); }
+
+.link-btn {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 12px;
+    color: var(--brand);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.result-card { text-align: center; margin-bottom: 16px; }
+.result-card .result-label { font-size: 1.6rem; font-weight: 700; margin: 0; }
+.result-card.result-safe .result-label { color: var(--safe); }
+.result-card.result-suspicious .result-label { color: var(--suspicious); }
+.result-card.result-fraud .result-label { color: var(--fraud); }
+.result-card .result-score { color: var(--muted); margin-top: 4px; }
